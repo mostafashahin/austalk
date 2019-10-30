@@ -1,5 +1,9 @@
 import sys, os
 import re
+#TODO add comment to show how this works
+#TODO use argparser and logging
+
+pNorm = re.compile('['+re.escape(';\/?!:,"-*')+']')
 
 OneChPhones = ('p','b','t','d','k','g','f','v','T','D','s','z','S','Z','h','m','n','N','l','w','j','W','I','e','{','6','O','U','@')
 TwoChPhones = ('tS','dZ','r\\','6:','i:','3:','o:','}:','{I','Ae','oI','@}','{O','I@','e:','U@')
@@ -54,7 +58,7 @@ pMultiSpaces = re.compile('[\s]{2,}')
 
 def addPhoneBoundry(trans):
     i = 0
-    print('1-', trans)
+    #print('1-', trans)
     while i <len(trans): 
         if trans[i:i+2] in TwoChPhones: 
             trans = trans[:i] +' '+trans[i:i+2]+' '+trans[i+2:] 
@@ -63,12 +67,12 @@ def addPhoneBoundry(trans):
             trans = trans[:i] +' '+trans[i:i+1]+' '+trans[i+1:] 
             i += 3
         else:
-            print('unkown symbole %s' % trans[i])
+            #print('unkown symbole %s' % trans[i])
             trans = trans[:i] +' '+trans[i:i+1]+' '+trans[i+1:]
             i += 3
-    print('2-', trans)
+    #print('2-', trans)
     trans = pMultiSpaces.sub(' ',trans)
-    print('3-', trans)
+    #print('3-', trans)
     return trans
 
 def mergeDuplicates(f):
@@ -76,7 +80,7 @@ def mergeDuplicates(f):
     with open(f,'r') as fin:
         for line in fin:
             aLine = line.split()
-            wrd,trans = aLine[0], aLine[1:]
+            wrd,trans = pNorm.sub('',aLine[0]), aLine[1:]
             if wrd not in d:
                 d[wrd] = set(trans)
             else:
@@ -89,7 +93,7 @@ def writeLexicon(d, f):
             for trans in d[wrd]:
                 trans = addPhoneBoundry(trans)
                 trans = ' '.join([PhoneMap[p] for p in trans.split()])
-                print(wrd.upper())
+                #print(wrd.upper())
                 print(wrd.upper(),trans,file= fout)
             
 
