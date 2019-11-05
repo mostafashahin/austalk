@@ -5,14 +5,24 @@ from collections import defaultdict
 from os.path import join, isdir
 from os import makedirs
 import re
+import logging as log
 
 #This script to convert the ctm file to praat TextGrid file
 #Inputs: 1- dir with all ctm files *.ctm, 2- phones.txt, 3- lexicon.txt file needed if word tier, 4- additional mapping (if phonemes need to be mapped to other symbols)
 #Outputs: TextGrid file for each speech file with: one or two tiers (phone tiers and optionaly word tier)
 
+log.basicConfig(filename='ctm2txtGrid.debug',filemode='a',level=log.DEBUG)
+logger = log.getLogger('')
+logFile = log.FileHandler('ctm2txtGrid.log','a')
+logFile.setLevel(log.INFO)
+console = log.StreamHandler()
+console.setLevel(log.DEBUG)
+logger.addHandler(logFile)
+logger.addHandler(console)
+
 
 def loadCMT(sCmtFile, dAlign):
-    aCmt = np.loadtxt(sCmtFile,dtype={'names':('uttId','channel','start','dur','sym'),'formats':('S21','i4','f4','f4','i4')})
+    aCmt = np.loadtxt(sCmtFile,dtype={'names':('uttId','channel','start','dur','sym'),'formats':('S50','i4','f4','f4','i4')})
     if dAlign is None:
         dAlign = defaultdict(list)
     for item in aCmt:
@@ -39,6 +49,7 @@ def Generate_TxtGrid(sDir, dAlign, dMapper=None, cSpkrIdDil='', sSuffix = '',bWo
         nTiers = 1
         nIntervals = len(lUtt)
         #Write file header
+        log.debug('Generating %s file' % sTxtGridFile)
         with open(sTxtGridFile,'w') as fTxtGrid:
             print('File type = "ooTextFile"\nObject class = "TextGrid"\n\nxmin = %f\nxmax = %f\ntiers? <exists>\nsize = %d\nitem []:\n\titem [1]:\n\t\tclass = "IntervalTier"\n\t\tname = "Phones"\n\t\txmin = %f\n\t\txmax = %f\n\t\tintervals: size = %d' % (fXmin,fXmax,nTiers,fXmin,fXmax,nIntervals), file=fTxtGrid)
             for i in range(nIntervals):
@@ -82,8 +93,11 @@ if __name__ == '__main__':
     #Regular expression to remove the position suffix from the key of dictionary
     ptrn_pos = re.compile('_[BIES]')
     dMapper,rPtrn = prepare_mapper(((sPhonesFile,None),(sPhoneMapFile,ptrn_pos)))
-    lCmtFiles = glob.glob(join(sCtmDir,'*.cmt'))
+    log.info("Mapper have been created from %s" % ' '.join((sPhonesFile,sPhoneMapFile)))
+    lCtmFiles = glob.glob(join(sCtmDir,'*.ctm'))
+    log.info("%d cmt files found in %s" % (len(lCtmFiles),sCtmDir))
     dAlign = defaultdict(list)
-    for fCmt in lCmtFiles:
-        loadCMT(fCmt,dAlign)
+    for fCtm in lCtmFiles:
+        log.debug("Now processing %s" % fCtm)
+        loadCMT(fCtm,dAlign)
     Generate_TxtGrid(sOutDir, dAlign, dMapper=dMapper, cSpkrIdDil='-', sSuffix = '',bWordTier = False)
