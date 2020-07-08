@@ -15,22 +15,21 @@ AUSTALKROOT=/srv/scratch/z5173707/Dataset/AusTalk/
 
 if [ $stage -le 0 ]; then
     #Prepare data: generate text, wav.scp, ...
-    local/austalk_data_prep.sh $AUSTALKROOT -x || exit 1
+    #local/austalk_data_prep.sh $AUSTALKROOT -x || exit 1
     
     #Generate MFCC
     
-    for part in train test dev; do
-        mfccdir=data/$part/mfcc
-        mfcclog=exp/make_mfcc/$part
-        mkdir -p $mfccdir $mfcclog
-        steps/make_mfcc.sh --nj $n --cmd "$train_cmd" data/$part $mfcclog $mfccdir
-        steps/compute_cmvn_stats.sh data/$part $mfcclog $mfccdir
-    done
+    #for part in train test dev; do
+    #    mfccdir=data/$part/mfcc
+    #    mfcclog=exp/make_mfcc/$part
+    #    mkdir -p $mfccdir $mfcclog
+    #    steps/make_mfcc.sh --nj $n --cmd "$train_cmd" data/$part $mfcclog $mfccdir
+    #    steps/compute_cmvn_stats.sh data/$part $mfcclog $mfccdir
+    #done
     
     #Prepare dict dirictory
     
     local/austalk_dict_prep.sh $AUSTALKROOT || exit 1  #I'm using set -e in the begining not sure if exit 1 needed
-    
     #Prepare lang directory
     
     utils/prepare_lang.sh data/local/dict "<UNK>" data/local/lang data/lang || exit 1
