@@ -68,7 +68,6 @@ ABORT	ax b oo t
 ABORT-	ax b oo t
 ABORTION	ax b oo sh ax n
 ABOU-	ae b u
-ABOUT	
 ABOUT	ax b au t
 ABOUT-	ax b au t
 ABOUTS	ax b au t s
@@ -517,7 +516,6 @@ ALREADY	oo l r e d ii
 ALREADY-	oo l r e d ii
 ALRI-	oo l r ii
 ALRIGH-	oo l r ye
-ALRIGHT	
 ALRIGHT	oo l r ye t
 ALRIGHT	b r eu
 ALRIGHT-	oo l r ye t
@@ -1509,7 +1507,6 @@ BEHIND	b ax h ye n d
 BEHIND-	b ax h ye n d
 BEIEVE	b ye v
 BEIGE	b ei zh
-BEING	
 BEING	b ii i ng
 BEING-	b ii i ng
 BEIRUT	b ei r u t
@@ -1674,7 +1671,6 @@ BIPOLAR	b ye p eu l ax
 BIRD	b er d
 BIRD-	b er d
 BIRDBOX	b er d b o k s
-BIRDS	
 BIRDS	aa
 BIRDS	b er d z
 BIRKENHEAD	b er k ax n h e d
@@ -2107,7 +2103,6 @@ BRINK	b r i ng k
 BRISK	b r i s k
 BRISTLE	b r i s l
 BRITTLE	b r i t l
-BRO	
 BRO	k eu z
 BRO	b r eu
 BRO	i m
@@ -2352,7 +2347,6 @@ BY-ELECTION	b ye ax l e k sh ax n
 BY-LAW	b ye l oo
 BY-PLACES	b ye p l ei s ax z
 BY-PRODUCT	b ye p r o d a k t
-BYE	
 BYE	b ye
 BYE-	b ye
 BYE-BYE	b ye b ye
@@ -2861,7 +2855,6 @@ CHILD	ch ye l d
 CHILD'S	ch ye l d s
 CHILD-	ch ye l d
 CHILDCARE	ch ye l d k e
-CHILDHOOD	
 CHILDHOOD	k a z ii
 CHILDHOOD	ch ye l d h uh d
 CHILDHOOD-	ch ye l d h uh d
@@ -4033,7 +4026,6 @@ CUZ	k u z
 CUZ	i m
 CUZ-	k u z
 CUZI	k u z ii
-CUZZIE	
 CUZZIE	k a z ii
 CUZZIE	ch ye l d h uh d
 CUZZIE-	k a z ii
@@ -4146,7 +4138,6 @@ DAVID'S	d ei v i d s
 DAWDLE	d oo d ax l
 DAWN	d oo n
 DAWSON'S	d oo s n s
-DAY	
 DAY	d ei
 DAY'S	d ei z
 DAY'S	d ii s
@@ -6386,7 +6377,6 @@ FIT-	f i t
 FITNESS	f i t n ax s
 FITS	f i t s
 FITTING	f i t i ng
-FIVE	
 FIVE	f ye v
 FIVE-	f ye v
 FIVE-DINING	f ye v d ye n i ng
@@ -6970,7 +6960,6 @@ GALLUP-POLL	g ae l ax p p eu l
 GALORE	g ax l oo
 GALVANISE	g ae l v ax n ye z
 GAMBLE	g ae m b ax l
-GAME	
 GAME	g ei m
 GAME-	g ei m
 GAMECUBE	g ax m e k j u b
@@ -7229,7 +7218,6 @@ GOALS-	g eu l z
 GOAT	g eu t
 GOATS	g eu t s
 GOBBLE	g o b ax l
-GOD	
 GOD	g o d
 GOD'S	g o d s
 GOD-	g o d
@@ -9019,7 +9007,6 @@ ISAAC	ye z ax k
 ISC-	i s k
 ISCO	i s k eu
 ISH-	i sh
-ISIS	
 ISIS	ye e s ye e s
 ISIS	i s ax s
 ISLAM	i z l ae m
@@ -9376,7 +9363,6 @@ KARIMINAL	k ax r i m ax n l
 KART	k aa t
 KATHERINE	k ae th ax r ax n
 KATHY	k ae th ii
-KAY	
 KAY	k ei
 KAYAK	k ye ae k
 KAZOO	k ax z u
@@ -9419,7 +9405,6 @@ KEYPAD	k ii p ae d
 KEYS	k ii z
 KFC	k e e f s ii
 KG	k ei dz ii
-KGB	
 KHABIB	k aa b ax s
 KHABIB	k aa b ii b
 KHABIB	k aa b ax b
@@ -9439,7 +9424,6 @@ KICKED-	k i k t
 KICKING	k i k i ng
 KICKS	k i k s
 KICKS-ONLY	k i k s eu n l ii
-KID	
 KID	k i d
 KID'S	k i d s
 KID-	k i d
@@ -9451,7 +9435,6 @@ KIDNAPPED	k i d n ae p t
 KIDNAPPING	k i d n ae p i ng
 KIDNEY	k i d n ii
 KIDNEYS	k i d n ii z
-KIDS	
 KIDS	k i d z
 KIDS-	k i d z
 KIERAN	k j u r ae n
@@ -9554,7 +9537,6 @@ KNOCKED	n o k t
 KNOCKOFF	n o k o f
 KNOCKOUT	n o k au t
 KNOT	n o t
-KNOW	
 KNOW	n eu
 KNOW	w o t
 KNOW	w i ch
@@ -9918,7 +9900,6 @@ LIE	l ye
 LIED	l ye d
 LIEK-	l ye k
 LIES	l ye z
-LIFE	
 LIFE	l ye f
 LIFE'S	l ye f s
 LIFE-	l ye f
@@ -9949,13 +9930,11 @@ LIGHTWEIGHT	l ye t w ei t
 LIIE	l ye j u
 LIK	l i k
 LIK-	l i k
-LIKE	
 LIKE	l ye k
 LIKE	s a m t ye m z
 LIKE	a m
 LIKE	w e n
 LIKE	h ii ax
-LIKE-	
 LIKE-	l ye k
 LIKE<	l ye k
 LIKED	l ye k t
@@ -10244,7 +10223,6 @@ LYING	l ye i ng
 LYON	l ye ax n
 LYON-	l ye ax n
 LYREBIRD	l ye ax b er d
-M	
 M	e m
 M-	e m
 M-	m
@@ -10974,7 +10952,6 @@ MIXED	m i k s t
 MIXED-UP	m i k s t a p
 MIXTURE	m i k s ch ax
 MK	e m k ei
-MM	
 MM	m
 MM	m m
 MM	b i k o z
@@ -11067,7 +11044,6 @@ MONSTER	m o n s t ax
 MONSTERS	m o n s t ax z
 MONSTROUS	m o n s t r ax s
 MONTAGE	m o n t aa zh
-MONTH	
 MONTH	m a n th
 MONTH-	m a n th
 MONTHS	m a n th s
@@ -11569,7 +11545,6 @@ NINETEEN	n ye n t ii n
 NINETEEN-EIGHTIES	n ye n t ii n ei t ii z
 NINETEEN-EIGHTY-EIGHT	n ye n t ii n ei t ii ei t
 NINETEEN-NINETIES	n ye n t ii n n ye n t ii z
-NINETEEN-NINETY-NINE	
 NINETEEN-SIXTIES	n ye n t ii n s i k s t ii z
 NINETEEN-TWENTY-NINE	n ye n t ii n t w e n t ii n ye n
 NINETEEN-YEAR-OLD	n ye n t ii n j ii ax eu l d
@@ -11596,7 +11571,6 @@ NIT	n i t
 NN	n n
 NN-	n n
 NNNN	n n n n
-NO	
 NO	n eu
 NO	ax t s
 NO	w a r ii z
@@ -11665,7 +11639,6 @@ NOSE-	n eu z
 NOSES	n eu z ax z
 NOSTALGIA	n o s t ae l dz ax
 NOSTRIL	n o s t r ax l
-NOT	
 NOT	l ye k
 NOT	n o t
 NOT-	n o t
@@ -12094,7 +12067,6 @@ OUTREACH	au t r ii ch
 OUTRIGHT	au t r ye t
 OUTS-	au t s
 OUTSET	au t s e t
-OUTSIDE	
 OUTSIDE	au t s ye d
 OUTSIDE-	au t s ye d
 OUTSIDER	au t s ye d ax
@@ -12629,7 +12601,6 @@ PHARMACIST	f aa m ax s ax s t
 PHARMACY	f aa m ax s ii
 PHARMACY'S	f aa m ax s ax z
 PHASE	f ei z
-PHD	
 PHD	p h d
 PHD	p ii ei ch d ii
 PHENOMENAL	f ax n o m ax n ax l
@@ -15744,7 +15715,6 @@ SOMETHING-	s a m th i ng
 SOMETHING>	s a m th i ng
 SOMETIME	s a m t ye m
 SOMETIME-	s a m t ye m
-SOMETIMES	
 SOMETIMES	s a m t ye m z
 SOMETIMES-	s a m t ye m z
 SOMEWHAT	s a m w o t
@@ -15765,7 +15735,6 @@ SOO'S	s u z
 SOO-SOO	s u s u
 SOOK	s uh k
 SOOKED	s uh k t
-SOON	
 SOON	s u n
 SOON-	s u n
 SOONER	s u n ax
@@ -17021,7 +16990,6 @@ THANOS	th ax n o s
 THANOS	th ae n eu z
 THANOS	th ax n oo s
 THANOS-	th ae n eu z
-THAT	
 THAT	dh ae t
 THAT	dh ax t
 THAT	w o z
@@ -17032,7 +17000,6 @@ THAT'LL	dh ae t l
 THAT'LL-	dh ae t l
 THAT'S	dh ae t s
 THAT'S	th ae t s
-THAT'S-	
 THAT'S-	dh ae t s
 THAT'S-	th ae t s
 THAT'S-THAT'S	dh ae t s dh ae t s
@@ -17081,7 +17048,6 @@ THER-	dh ax
 THERAPEUTIC	th e r ax p j u t i k
 THERAPIST	th e r ax p ax s t
 THERAPY	th e r ax p ii
-THERE	
 THERE	dh e
 THERE	dh ee
 THERE	f oo
@@ -17875,7 +17841,6 @@ TWO-THOUSAND-AND-ELEVEN	t u th au z n d ae n d ax l e v n
 TWO-THOUSAND-AND-FIFTEEN	t u th au z n d ae n d f ax f t ii n
 TWO-THOUSAND-AND-FIVE	t u th au z n d ae n d f ye v
 TWO-THOUSAND-AND-FOUR	t u th au z n d ae n d f oo
-TWO-THOUSAND-AND-NINE	
 TWO-THOUSAND-AND-NINE	t u th au z n d ae n d n ye n
 TWO-THOUSAND-AND-NINETEEN	t u th au z n d ae n d n ye n t ii n
 TWO-THOUSAND-AND-SEVENTEEN	t u th au z n d ae n d s e v n t ii n
@@ -17910,7 +17875,6 @@ TYPEWRITER	t ye p r ye t ax
 TYPHOID	t ye f oi d
 TYPHOON	t ye f u n
 TYPICAL	t i p i k l
-TYPICAL-	
 TYPICAL-	t i p i k l
 TYPICALLY	t i p i k l ii
 TYPING	t ye p i ng
@@ -17929,10 +17893,8 @@ UGH	a h
 UGH	a k
 UGH-	a k
 UGLY	a g l ii
-UH	
 UH	k a z ii
 UH	a
-UH-	
 UH-	a
 UH-HUH	a h ax
 UH-OH	a eu
@@ -17944,9 +17906,7 @@ UKRAINIAN	j u k r ei n ii ax n
 ULCER	a l s ax
 ULTIMATE	a l t ax m ax t
 ULTIMATELY	a l t ax m ax t l ii
-UM	
 UM	a m
-UM-	
 UM-	a m
 UM<LIPSMACK>	a m l i p s m ae k
 UMA	j u e m ei
@@ -19006,7 +18966,6 @@ WORRIES	k a z ii
 WORRY	w a r ii
 WORRY-	w a r ii
 WORRYING	w a r ii i ng
-WORSE	
 WORSE	w er s
 WORSHIP	w er sh i p
 WORST	w er s t
@@ -19085,7 +19044,6 @@ X	i k s
 X-	i k s
 X-RAY	e k s r ei
 X-RAYS	k s r ei z
-XBOX	
 XBOX	e k s b o k s
 XBOX	i k s b o k s
 XBOX	ax k s b ax k s
