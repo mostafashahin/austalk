@@ -6,7 +6,7 @@ AUSTALKDIR=$1
 
 mkdir -p data/local/dict
 
-python3 local/Prepare_dict.py $AUSTALKDIR/lexicon_samba data/local/dict/lexicon.tmp
+./local/Prepare_dict.py $AUSTALKDIR/lexicon_samba data/local/dict/lexicon.tmp
 
 cat data/local/dict/lexicon.tmp | sort -u > data/local/dict/lexicon.txt
 

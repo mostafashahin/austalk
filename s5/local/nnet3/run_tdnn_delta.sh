@@ -9,7 +9,7 @@
 # note: the last column is a version of tdnn_d that was done after the
 # changes for the 5.1 version of Kaldi (variable minibatch-sizes, etc.)
 
-stage=11
+stage=9
 affix=
 train_stage=-10
 has_fisher=false
@@ -39,7 +39,7 @@ dir=exp/nnet3_vp_delta/tdnn
 dir=$dir${affix:+_$affix}
 dir=${dir}$suffix
 train_set=train
-ali_dir=exp/tri3b_ali
+ali_dir=exp/nnet3_ali_train/
 
 local/nnet3/run_ivector_common_tmp.sh --stage $stage \
         --speed-perturb $speed_perturb || exit 1;
@@ -77,11 +77,11 @@ if [ $stage -le 10 ]; then
 
   steps/nnet3/train_dnn.py --stage=$train_stage \
     --cmd="$decode_cmd" \
-    --feat.online-ivector-dir exp/nnet3_vp_delta/ivectors_${train_set} \
+    --feat.online-ivector-dir exp/nnet3_vp/ivectors_${train_set} \
     --feat.cmvn-opts="--norm-means=false --norm-vars=false" \
     --trainer.num-epochs 2 \
-    --trainer.optimization.num-jobs-initial 1 \
-    --trainer.optimization.num-jobs-final 2 \
+    --trainer.optimization.num-jobs-initial 2 \
+    --trainer.optimization.num-jobs-final 4 \
     --trainer.optimization.initial-effective-lrate 0.0017 \
     --trainer.optimization.final-effective-lrate 0.00017 \
     --trainer.optimization.do-final-combination true \
@@ -103,7 +103,7 @@ if [ $stage -le 11 ]; then
     (
     num_jobs=`cat data/${decode_set}_hires/utt2spk|cut -d' ' -f2|sort -u|wc -l`
     steps/nnet3/decode.sh --nj $num_jobs --cmd "$decode_cmd" \
-      --online-ivector-dir exp/nnet3_vp_delta/ivectors_${decode_set} \
+      --online-ivector-dir exp/nnet3_vp/ivectors_${decode_set} \
       $graph_dir data/${decode_set}_hires $dir/decode_${decode_set}_hires || exit 1;
     ) &
   done

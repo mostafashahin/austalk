@@ -1,12 +1,18 @@
+#!/usr/bin/env python3
+
 import sys, os
 import re
 #TODO add comment to show how this works
 #TODO use argparser and logging
 
 pNorm = re.compile('['+re.escape(';\/?!:,"-*')+']')
+sStrsCh = "`" #Indicating the stressed syllable
+sHyphen = "-"
+sPeriod = "."
+sSemi = ";"
 
-OneChPhones = ('p','b','t','d','k','g','f','v','T','D','s','z','S','Z','h','m','n','N','l','w','j','W','I','e','{','6','O','U','@')
-TwoChPhones = ('tS','dZ','r\\','6:','i:','3:','o:','}:','{I','Ae','oI','@}','{O','I@','e:','U@')
+OneChPhones = ('p','b','t','d','k','g','f','v','T','D','s','z','S','Z','h','m','n','N','l','w','j','W','I','e','{','6','O','U','@','A','E','r','a')
+TwoChPhones = ('tS','dZ','r\\','6:','i:','3:','o:','}:','{I','Ae','oI','@}','{O','I@','e:','U@','@U','u:','a:','@:')
 
 PhoneMap = dict((('p' , 'AA'), 
                  ('b' , 'AB'), 
@@ -29,7 +35,7 @@ PhoneMap = dict((('p' , 'AA'),
                  ('n' , 'AT'), 
                  ('N' , 'AU'), 
                  ('l' , 'AV'), 
-                 ('r\\' , 'AW'), 
+                 ('r' , 'AW'), 
                  ('w' , 'AX'), 
                  ('j' , 'AY'), 
                  ('W' , 'AZ'), 
@@ -51,13 +57,28 @@ PhoneMap = dict((('p' , 'AA'),
                  ('@}' , 'BP'), 
                  ('{O' , 'BQ'), 
                  ('I@' , 'BR'), 
-                 ('e:' , 'BS')))
+                 ('e:' , 'BS'),
+                 ('U@' , 'BT'),
+                 ('@U' , 'BU'),
+                 ('A' , 'BV'),
+                 ('E' , 'BX'),
+                 ('r\\' , 'BW'),
+                 ('u:' , 'BY'),
+                 ('a' , 'BZ'),
+                 ('a:' , 'CA'),
+                 ('@:' , 'CB')))
 
 
 pMultiSpaces = re.compile('[\s]{2,}')
 
 def addPhoneBoundry(trans):
     i = 0
+    trans = trans.replace(sStrsCh,'')
+    trans = trans.replace(sHyphen,'')
+    trans = trans.replace(sPeriod,'')
+    trans = trans.replace(sSemi,'')
+    trans = trans.replace('%','')
+
     #print('1-', trans)
     while i <len(trans): 
         if trans[i:i+2] in TwoChPhones: 

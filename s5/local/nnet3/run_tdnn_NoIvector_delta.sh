@@ -16,8 +16,7 @@ has_fisher=false
 speed_perturb=false
 common_egs_dir=
 reporting_email=
-remove_egs=false
-num_jobs=16
+remove_egs=true
 
 . ./cmd.sh
 . ./path.sh
@@ -36,15 +35,13 @@ suffix=
 if [ "$speed_perturb" == "true" ]; then
   suffix=_sp
 fi
-dir=exp/nnet3_noIv/tdnn
+dir=exp/nnet3_vp_noIv_delta_realign/tdnn
 dir=$dir${affix:+_$affix}
 dir=${dir}$suffix
 train_set=train
-ali_dir=exp/nnet3_vp_ali_train/
+ali_dir=exp/nnet3_ali_train/
 
-local/nnet3/run_sp_hires.sh --stage $stage --speed-perturb $speed_perturb --num-jobs $num_jobs || exit 1
-#local/nnet3/run_ivector_common_tmp.sh --stage $stage \
-#        --speed-perturb $speed_perturb || exit 1;
+#local/nnet3/run_sp_hires.sh --stage $stage --speed-perturb $speed_perturb --num-jobs $num_jobs || exit 1
 
 if [ $stage -le 9 ]; then
   echo "$0: creating neural net configs using the xconfig parser";
@@ -54,14 +51,14 @@ if [ $stage -le 9 ]; then
   mkdir -p $dir/configs
   cat <<EOF > $dir/configs/network.xconfig
   input dim=40 name=input
-
+  delta-layer name=delta 
   # please note that it is important to have input layer with the name=input
   # as the layer immediately preceding the fixed-affine-layer to enable
   # the use of short notation for the descriptor
-  fixed-affine-layer name=lda input=Append(-2,-1,0,1,2) affine-transform-file=$dir/configs/lda.mat
+  no-op-component name=input2 input=Append(-2,-1,0,1,2)
 
   # the first splicing is moved before the lda layer, so no splicing here
-  relu-renorm-layer name=tdnn1 dim=1024
+  relu-renorm-layer name=tdnn1 input=input2 dim=1024
   relu-renorm-layer name=tdnn2 input=Append(-1,2) dim=1024
   relu-renorm-layer name=tdnn3 input=Append(-3,3) dim=1024
   relu-renorm-layer name=tdnn4 input=Append(-3,3) dim=1024
